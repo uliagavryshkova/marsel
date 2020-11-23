@@ -1,0 +1,279 @@
+.info__line{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 25px 0;
+    &:before{
+        position: absolute;
+        content: "";
+        top: 5px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 8px;
+        border-top: 1px solid #c59d5f;
+        border-bottom: 2px solid #c59d5f;
+        animation: anim-decor 1.5s 2.1s forwards;
+    }
+}
+.menu{
+    &__food{
+        position: relative;
+        width: 100%;
+        margin: 10px 0;
+        padding-right: 65px;
+        transform: translateX(600px);
+        &:nth-child(2){
+            animation: anim-text 1.5s 2s forwards;
+        }
+        &:nth-child(3){
+            animation: anim-text 1.5s 2.2s forwards;
+        }
+        &:nth-child(4){
+            animation: anim-text 1.5s 2.3s forwards;
+        }
+        &:nth-child(5){
+            animation: anim-text 1.5s 2.4s forwards;
+        }
+    }
+    &__food-name{
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        opacity: 1;
+    }
+    &__food-descr{
+        font-size: 13px;
+        line-height: 20px;
+        color: rgb(175, 175, 175);
+        letter-spacing: 0px;
+        opacity: 1;
+    }
+    &__food-price{
+        position: absolute;
+        top: 3px;
+        right: 0;
+        display: inline-block;
+        width: 62px;
+        height: 34px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 23px;
+        color: rgb(255, 255, 255);
+        letter-spacing: 0px;
+        padding: 5px 5px 5px 10px;
+        background-image: url("../static/img/menu/price-decor.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &__inner{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 25px;
+        margin-bottom: 40px;
+    }
+    &__items{
+        flex: 0 0 50%;
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        overflow: hidden;       
+        & h4{
+            margin: 10px 0 10px;
+        }
+    }
+    &__items:nth-child(2){
+        padding: 30px 0px 30px 30px;
+        flex-direction: column;
+    }
+    &__item{
+        flex: 0 0 48%;
+        width: 48%;
+        min-height: 200px;
+        overflow: hidden;
+        position: relative;
+        transform: scale(0);
+        animation: anim-scale 3s 0.3s forwards;
+        &:nth-child(1),&:nth-child(2){
+            margin-bottom: 4%;
+        } 
+        &:before{
+            position: absolute;
+            content: "";
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0;
+            background-color: #c59d5f;
+            opacity: 0.8;
+            z-index: 1;
+            transition: all .3s linear;
+        } 
+        &:hover:before{
+            height: 100%;
+        } 
+    }
+    &__item-img{
+        min-height: 200px;
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        transition-property: transform;
+        transition-duration: 1.5s;
+        transition-timing-function: linear;
+    }
+    &__item-name{
+        position: absolute;
+        top: 40%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0px 10px auto;
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+        z-index: 1;
+        opacity: 0;
+        transition: all .1s linear .1s;
+    }
+    &__items-info{
+        width: 100%;
+        overflow: hidden;
+        h4{
+            opacity: 0;
+            animation: anim-title 1.5s 1.5s forwards;
+        }
+        h2{
+            opacity: 0;
+            animation: anim-title 1.5s 1.7s forwards;
+        }
+    }
+}
+.is_ie {
+    & .menu__items:nth-child(2){
+        padding: 0;
+    }
+    & .menu__items-info{
+        padding: 30px 0 0 30px;
+    }
+    & .menu__food-item{
+        padding-left: 30px;
+    }
+} 
+
+.menu__item:hover .menu__item-img{
+    transform: scale(1.2);
+}
+.menu__item:hover .menu__item-name{
+    opacity: 1;
+}
+
+@media (max-width:1212px){
+    .menu__items:nth-child(1){
+        display: block;
+    }
+    .menu__item {
+        width: 100%;
+        min-height: 180px;
+    }
+    .menu__item:nth-child(3){
+        margin-bottom: 4%;
+    }
+
+    .menu__inner-title{
+        width: 100%;
+    }
+}
+
+@media (max-width:767px){
+    .menu__inner{
+        display: block;
+    }
+    .menu__items:nth-child(1) {
+        display: none;
+    }
+    .menu__items:nth-child(2) {
+        padding: 0px 0 0 0;
+        display: block;
+        width: 100%;
+    }  
+    .menu__food{
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding-right: 0;
+        min-height: 160px;
+        transform: translateX(800px);
+    }
+    .menu__food-item{
+        flex: 0 0 48%;
+        width: 48%;
+        padding: 10px 0;
+    }
+    .menu__food-item:nth-child(2){
+        min-height: 160px; /* ie */
+        width: 50%;  /* safari*/
+    }
+    .menu__food-price {
+        top: 2px;
+    }
+    .menu__food-descr{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .is_ie {
+        & .menu__items-info{
+            padding: 30px 0 0 0;
+        }
+        & .menu__food-item{
+            padding-left: 0;
+        }
+    }
+}
+@media (max-width:500px){     
+    .menu__food{
+        display: block;
+        margin: 20px 0 40px;
+    }
+    .menu__food-item:nth-child(1) {
+        width: 80%;
+    }
+    .menu__food-item:nth-child(2) {
+        width: 100%;
+        min-height: 230px;
+    }
+}
+@media (max-width:400px){
+    .menu__inner{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+@keyframes anim-text {
+    0% {
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes anim-decor {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes anim-scale {
+    0% {
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+} 

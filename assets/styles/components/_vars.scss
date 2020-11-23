@@ -1,0 +1,22 @@
+$fontfamily:'Lato';
+// font-family: 'Lato', sans-serif;
+
+$minwidth:320px;
+$mw:1200;
+$md1:$mw+12;
+$md2:767.98;
+$md3:767.98;
+$md4:479.98;
+
+
+%lato-regular{
+    font-family: 'Lato',sans-serif;
+    font-weight: 400;
+}
+
+%lato-bold{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+

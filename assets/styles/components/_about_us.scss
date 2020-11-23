@@ -1,0 +1,108 @@
+.about-us{
+    &__inner{
+        display: flex;
+        overflow: hidden;
+        margin-bottom: 40px;
+    }    
+    &__item{
+        flex: 0 0 50%; 
+        width: 50%;
+        padding: 20px;
+        display: flex;
+        &:nth-child(1){
+            padding-left: 0;
+        }
+    }
+    &__image{ 
+        flex: 1 1 100%; 
+        position: relative;
+        &:hover{
+            &:before,&:after{
+                border-color: rgba(197, 157, 95, 1);
+                height: 265px;
+                width: 240px;
+            }
+        }
+        &:before,&:after{
+            content: '';
+            border-color: rgba(51,51,51,.15);
+            border-style: solid; 
+            position: absolute;   
+            height: 200px;            
+            width: 200px;
+            z-index: -1;
+            transition-property: height,width;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+        }
+        &:before {
+            border-width: 2px 0 0 2px;
+            left: -20px;
+            top: -20px;
+        }
+        &:after {
+            border-width: 0 2px 2px 0;
+            bottom: -20px;
+            right: -20px;
+        }
+    }
+}
+
+.about-us__item:nth-child(1){
+    transform: translateX(-600px);
+}
+.about-us__item:nth-child(2){
+    transform: translateX(600px);
+}
+.done{
+    & .about-us__item:nth-child(1){
+        animation: anim-right 2s forwards;
+    }
+    & .about-us__item:nth-child(2){
+        animation: anim-left 2s forwards;
+    }
+}
+@media (max-width:992px){
+    .about-us__image:before,
+    .about-us__image:after{
+        border-color: rgba(197, 157, 95, 1);
+        height: 265px;
+        width: 240px;
+    }
+}
+@media (max-width:700px){
+    .about-us__inner{
+        display: block;
+    }
+    .about-us__item{
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+    .about-us__item:nth-child(1){
+        padding: 0;
+    }
+    .about-us__image{
+        min-height: 300px;
+    }
+    .about-us__image:before,
+    .about-us__image:after {
+        height: 140px;
+        width: 140px;
+    }
+}
+@media (max-width: 500px){
+    .about-us{
+        padding-top: 0;
+    }
+    .about-us__inner{
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 400px){
+    .about-us__image:before,
+    .about-us__image:after {
+        height: 90px;
+        width: 90px;
+    }
+    
+}

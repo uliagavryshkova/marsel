@@ -1,0 +1,287 @@
+html{
+    box-sizing: border-box;
+}
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 20px;
+    height: 8px;
+    box-shadow: inset 1px 1px 10px #000;
+    background: rgba(197, 157, 95, 0.7);
+}
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    // border: 2px solid ghostwhite;
+    border: 1px solid rgba(197, 157, 95, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+*:hover{
+    outline: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul,
+li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin: 0;
+    font-size: inherit;
+}
+
+.container{max-width:$mw+px;margin: 0 auto;width: 100%;
+	@media (max-width:$md1+px){max-width: 750px;}
+	@media (max-width:$md2+px){max-width: none;padding:0 10px;}
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, and, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, textarea, select {
+    background: transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body {
+    @extend %lato-regular;
+    font-size: 16px;
+    letter-spacing: .5px;
+    line-height: 32px;
+    color: #505050;
+    text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body.lock {
+	overflow: hidden;
+}
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+    padding-top: 65px;
+}
+header, section{
+    width: 100%;
+}
+section{
+    padding: 60px 0;
+}
+.logo span{
+    font-family: 'Pinyon Script', cursive;
+    font-size: 36px;
+    font-weight: 600;
+    color: #c59d5f;
+    margin-left: 5px;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__item{
+        margin: 2px 3px;
+        padding: 5px 5px;
+    }
+    &__item-link{
+        display: inline-block;
+        font-size: 18px;
+        line-height: 36px;
+        color: #fff;        
+        height: 36px;        
+        width: 36px;
+        transition: all 0.3s linear 0s;
+        &:hover{
+            color: #c59d5f;
+        }
+    }
+}
+h1{
+    @extend %lato-regular;
+    font-size: 45px;
+    line-height: 75px;
+    color: rgb(255, 255, 255);
+    letter-spacing: .5px; 
+    text-transform: uppercase;
+}
+h2{
+    @extend %lato-bold;
+    font-size: 30px;
+    line-height: 32px;
+    letter-spacing: .5px;
+    color: #041527;
+    text-transform: unset;
+    text-align: inherit;  
+}
+h3 {
+    font-family: ceremonious;
+    text-transform: capitalize;
+    display: inline-block;
+    font-size: 55px;
+    line-height: 75px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: rgb(197, 157, 95);
+}
+h4{
+    font-family: ceremonious;
+    font-size: 34px;
+    margin: 20px 0 10px;
+    line-height: 35px;
+    font-weight: 400;
+    color: #b7b7b7;
+    letter-spacing: .5px;
+    text-align: inherit;
+    text-transform: none;
+}
+h5{
+    font-family: ceremonious;
+    font-size: 32px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 32px;
+    color: #c59d5f;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+    letter-spacing: .5px;
+    position: relative;
+    margin-bottom: 30px;
+    &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 30px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;   
+        border-bottom: 1px solid #c59d5f; 
+    }
+}
+.info{
+    text-align: center;
+    &__link{
+        display: inline-block;
+        font-family: 'Lato',sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        padding: 10px 30px;
+        margin: 35px auto;
+        background: #c59d5f;
+        border: 2px solid #c59d5f;
+        color: #fff;
+        position: relative;
+        transition: all 0.5s linear; 
+        &:hover{
+            background: transparent;
+            color:#c59d5f;
+            &:before,&:after{
+                width: 100%;
+            }
+            &:after{
+                height: 5%;
+                right: 0;
+            }
+            &:before{
+                height: 4%;
+                left: 0;
+            }   
+        }
+        &:before,&:after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 10%;
+            height: 28%;
+            border: 2px solid #c59d5f;
+            transition: all .3s linear;           
+        }
+        &:before{
+            left: -10px;
+            bottom: -10px;
+            border-top: none;
+            border-right: none;
+        }
+        &:after{
+            right: -10px;
+            top: -10px;
+            border-left: none;
+            border-bottom: none;
+        }
+    }
+}
+.info__decor{
+    position: relative;
+    width: 50px;
+    margin: 0 auto;
+    padding: 18px 0;
+    &:before{
+        content: "";
+        width: 45px;
+        height: 1px;
+        background-color: #bfbfbf;
+        top: 50%;
+        position: absolute;
+        left: 60px;
+        margin-top: -1px;
+        margin: 0 auto;
+    }
+    &:after {
+        content: "";
+        width: 45px;
+        height: 1px;
+        background-color: #bfbfbf;
+        top: 50%;
+        position: absolute;
+        right: 60px;
+        margin: 0 auto;
+    }
+    
+}
+._ibg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+._ibg img {
+    display: none;
+}
+
+@media (max-width:767px){
+    section{
+        padding: 40px 0;
+    }
+    .info__link {
+        padding: 5px 20px;
+    }
+}
+@media (max-width:400px){
+    h4 {
+        font-size: 30px;
+        margin: 10px 0 10px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    .info__decor {
+        padding: 10px 0;
+    }
+}

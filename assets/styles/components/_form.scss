@@ -1,0 +1,195 @@
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    opacity: 1;
+    transition: all 0.5s linear;  
+    &__success{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.5s 1s linear; 
+    }  
+    &__box:nth-child(1) input{
+        position: relative;
+        z-index: 2;
+    }
+    &__box:nth-child(1):after {
+        position: absolute;
+        content: "";
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #000;
+        bottom: 0;
+        height: 0;
+        margin: auto;
+        right: 17px;
+        top: 5px;
+        z-index: 1;
+    }    
+    &__box,
+    &__option{
+        border-bottom: 1px solid #ccc;
+        color: #505050;
+        padding: 12px 5px;
+        width: 30%;
+        margin: 20px 0;
+        position: relative;
+    } 
+    &__box label{
+        position: absolute;
+        content: "";
+        top: -20px;
+        color: #c59d5f;
+        opacity: 0;
+        transition: all 0.5s linear;        
+    }
+    &__box .active{
+        opacity: 1;
+    }
+    &__box input{
+        display: block;
+        width: 100%;
+        height: 31px;
+        border: 0;
+        background-color: transparent;
+    }    
+    &__box input:-internal-autofill-selected{
+        background-color: transparent !important;
+    }
+    &__option{
+        cursor: pointer;
+    }
+    &__option:after{
+        position: absolute;
+        content: "";
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #000;
+        bottom: 0;
+        height: 0;
+        margin: auto;
+        right: 17px;
+        top: 5px;
+    }
+    &__option-select{
+        position: relative;
+        z-index: 2; 
+    }
+    &__option-list{
+        position: absolute;
+        height: 0px;
+        overflow: hidden;
+        z-index: 1;
+        background: #fff;
+        width: 93%;
+        top: 57px;
+        left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        transition-property: height;
+        transition-duration: 0.3s;
+        transition-timing-function: linear;
+        li{
+            width: 33.33%;
+            color: #505050;
+            transition-property: color;
+            transition-duration: 0.3s;
+            transition-timing-function: linear;
+        } 
+        li:hover{
+            color: #c59d5f;
+        }   
+    }
+}  
+.hidden{
+    opacity: 0;
+}
+.success{
+    &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 30px;
+        bottom: 70px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-bottom: 1px solid #c59d5f;
+    }
+    & .form__success{
+        opacity: 1;
+        z-index: 1;
+    }
+} 
+.active .form__option-list{
+    height: 130px;
+    border-bottom: 1px solid #ccc;
+}
+@media (max-width:1212px){
+    .is_ie {
+        & .form__box:nth-child(2) input{
+            margin-left: 15px;
+        }
+    } 
+}
+@media (max-width:700px){    
+    .form__box, .form__option {
+        width: 45%;
+        padding: 5px 5px;
+        margin: 15px 0;
+    }
+    .form__option-list {
+        top: 43px;
+        z-index: 3;
+    }  
+    .is_ie {
+        & .form__box:nth-child(2) input{
+            margin-left: 5px;
+        }
+    }  
+}
+@media (max-width:550px){
+    .form{
+        display: block;
+        text-align: center;
+        &__option{
+            text-align: left;
+        }
+    }
+    .form__box, .form__option {
+        display: block;
+        width: 100%;
+        margin: 15px 0 25px;
+    }
+    .form__box--email {
+        display: none;
+    }
+    .is_ie {
+        & .form__box:nth-child(2) input{
+            margin-left: 60px;
+        }
+    } 
+}
+.is_ie {
+    & .form__box:nth-child(2){
+        margin-left: -60px;
+    }
+} 

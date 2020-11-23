@@ -1,0 +1,208 @@
+.slick-slide:focus { outline: none; }
+.main {
+    margin: 0 0 60px;
+}
+.main__slider {
+    height: calc(100vh - 65px);
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+    &-item {
+        height: calc(100vh - 65px);
+        img {
+        display: none;
+        }
+    }
+    & .slick-list {
+        overflow: hidden;
+    }
+    & .slick-track{
+        display: flex;
+        justify-content: center;
+    }
+    & .slick-slide{
+        z-index: 1 !important;
+    }
+}
+.slider-item__info {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 75%;
+    top: 30%;
+    text-align: center;
+    overflow: hidden;
+    opacity: 1;
+}
+.slider-item__info-subtitle {
+    margin-bottom: 5px;
+}
+.slider-item__info-title {
+    overflow: hidden;
+    margin-bottom: 10px;
+    h3 {
+        transform: translateY(100px);
+    }
+}
+.slider-item__info-text {
+    margin-bottom: 30px;
+    overflow: hidden;
+    h1 {
+        transform: translateY(100px);
+    }
+}
+.slider-item__info-subtext {
+    font-size: 25px;
+    line-height: 25px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    background-image: url("../static/img/txt.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 0;
+    opacity: 0;
+    height: 55px;
+    padding: 0;
+    margin: 0 auto;
+    span {
+        visibility: hidden;
+        opacity: 0;
+        display: block;
+        padding-top: 15px;
+    }
+}
+.main__slider-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    width: 105px;
+    margin: 0 auto;
+    height: 42px;
+}
+.slider-btn {
+    display: inline-flex;
+    padding: 10px 20px;
+    border: none;
+    background: rgba(197, 157, 95, 0.8);
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+    bottom: 30px;
+    outline: 0;
+    svg {
+        stroke: #fff;
+    }
+    &__right {
+        right: 0;
+        bottom: 0;
+    }
+    &__left {
+        left: 0;
+        bottom: 0;
+    }
+    &.slick-disabled {
+        background-color: #000;
+        svg {
+        stroke: #fff;
+        }
+    }
+}
+
+.slick-active .slider-item {
+    animation: anim-1 10s infinite;
+}
+.slick-active .slider-item__info-title {
+    h3 {
+        animation: anim-2 2s 0s forwards;
+    }
+}
+.slick-active .slider-item__info-text {
+    h1 {
+        animation: anim-2 2s 2s forwards;
+    }
+}
+.slick-active .slider-item__info-subtext {
+    animation: anim-3 2s 4s forwards;
+    span {
+        animation: anim-4 2s linear 5.3s forwards;
+    }
+}
+.slick-active .slider-item__info{
+    animation: anim-5 0.5s 7s forwards;
+}
+
+
+@media (max-width:1212px){
+    .slider-item__info-title h3 {
+        font-size: 45px;
+        line-height: 65px;
+    }
+    .slider-item__info-text h1 {
+        font-size: 35px;
+        line-height: 65px;    
+    }
+    .slider-item__info-subtext {
+        font-size: 20px;
+        line-height: 20px;
+        height: 50px;
+        max-width: 360px;
+    }
+}
+@media (min-width:991px){
+    .slider-btn:hover {
+        background: rgba(197, 157, 95, 1);
+    }
+}
+@media (max-width:705px){
+    .slider-item__info-title h3 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .slider-item__info-text h1 {
+        font-size: 25px;
+        line-height: 55px;    
+    }
+    .slider-item__info-subtext {
+        font-size: 18px;
+        line-height: 18px;
+        height: 45px;
+        max-width: 290px;
+    }
+}
+@media (max-width:540px){
+    .slider-item__info {
+        width: 95%;
+    }
+}
+@media (max-width:440px){
+    .slider-item__info-title h3 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+    .slider-item__info-text h1 {
+        font-size: 18px;
+        line-height: 45px;    
+    }
+    .slider-item__info-subtext {
+        font-size: 15px;
+        line-height: 15px;    
+        height: 35px;
+        max-width: 240px;
+        span{
+        padding-top: 10px;
+        }
+    }
+}
+@media (max-width:340px){
+    .slider-item__info-title h3 {
+        font-size: 27px;
+        line-height: 35px;
+    }
+    .slider-item__info-text h1 {
+        font-size: 16px;
+        line-height: 35px; 
+    }
+}

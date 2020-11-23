@@ -1,0 +1,39 @@
+{
+  "name": "marsel",
+  "version": "1.0.0",
+  "description": "marsel",
+  "author": "Yulia <ulia_410@ukr.net>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.1",
+    "@nuxtjs/pwa": "^3.0.0",
+    "autoprefixer": "^6.5.4",
+    "axios": "^0.19.2",
+    "bulma": "^0.9.0",
+    "cross-env": "^5.2.0",
+    "node-sass": "^4.14.1",
+    "nuxt": "^2.0.0",
+    "nuxt-vuex-localstorage": "^1.2.7",
+    "sass-loader": "^9.0.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "gh-pages": "^3.1.0"
+  },
+  "browserslist": [
+    "last 5 versions"
+  ]
+}
