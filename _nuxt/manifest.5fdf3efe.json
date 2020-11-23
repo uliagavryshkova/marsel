@@ -1,0 +1,11 @@
+{
+  "name": "marsel",
+  "short_name": "marsel",
+  "description": "marsel",
+  "icons": [],
+  "start_url": "/marsel/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "lang": "en"
+}
